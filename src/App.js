@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  function onClick(){
+    alert('Hola Mundo React!')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form action="/my-handling-form-page" method="post">
+        <ul>
+          <li>
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+          </li>
+          <li>
+            <label htmlFor="mail">E-mail:</label>
+            <input type="email" id="mail" name="user_mail" />
+          </li>
+          <li>
+            <label htmlFor="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+          </li>
+          <li className="button">
+            <button type="button" onClick={onClick}>Send your message</button>
+          </li>
+        </ul>
+      </form>
     </div>
   );
 }
